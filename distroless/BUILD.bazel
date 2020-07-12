@@ -6,9 +6,9 @@ load("@package_bundle//file:packages.bzl", "packages")
 
 container_image(
     name = "latest",
-    repository = "cescoffier/native-base",
+    repository = "serrodcal/native-base",
     base = "@distroless_base//image",
-    debs = [        
-        packages["zlib1g"]
-    ]    
+    debs = [
+        packages["zlib1g","libstdc++6"]
+    ]
 )

@@ -7,13 +7,13 @@ def distroless_bazel_repositories():
     git_repository(
         name = "io_bazel_rules_go",
         remote = "https://github.com/bazelbuild/rules_go.git",
-        commit = "0.16.5",
+        commit = "v0.23.3",
     )
 
     http_archive(
         name = "io_bazel_rules_docker",
-        url = "https://github.com/bazelbuild/rules_docker/archive/v0.5.1.zip",
-        strip_prefix = "rules_docker-0.5.1",
+        url = "https://github.com/bazelbuild/rules_docker/archive/v0.14.4.zip",
+        strip_prefix = "rules_docker-0.14.4",
     )
 
     git_repository(

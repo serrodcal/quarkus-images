@@ -1,11 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-load(
-    "@distroless//package_manager:package_manager.bzl",
-    "package_manager_repositories",
-    "dpkg_src",
-    "dpkg_list",
-)
+load("@distroless//package_manager:package_manager.bzl", "package_manager_repositories")
+load("@distroless//package_manager:dpkg.bzl", "dpkg_src", "dpkg_list")
 
 def debian_dependencies():
 
@@ -38,9 +34,10 @@ def debian_dependencies():
 
     dpkg_list(
         name = "package_bundle",
-        packages = [            
-            "zlib1g"
-        ],        
+        packages = [
+            "zlib1g",
+            "libstdc++6"
+        ],
         sources = [
             "@debian_stretch_security//file:Packages.json",
             "@debian_stretch_backports//file:Packages.json",
